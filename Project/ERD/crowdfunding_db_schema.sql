@@ -13,7 +13,7 @@ CREATE TABLE "contacts" (
      )
 );
 
-CREATE TABLE "crowdfunding" (
+CREATE TABLE "campaign" (
     "cf_id" int   NOT NULL,
     "contact_id" int   NOT NULL,
     "company_name" VARCHAR(33)   NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE "crowdfunding" (
     "end_date" date   NOT NULL,
     "category_id" VARCHAR(4)   NOT NULL,
     "subcategory_id" VARCHAR(8)   NOT NULL,
-    CONSTRAINT "pk_crowdfunding" PRIMARY KEY (
+    CONSTRAINT "pk_campaign" PRIMARY KEY (
         "cf_id"
      )
 );
@@ -49,12 +49,12 @@ CREATE TABLE "subcategory" (
      )
 );
 
-ALTER TABLE "crowdfunding" ADD CONSTRAINT "fk_crowdfunding_contact_id" FOREIGN KEY("contact_id")
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_contact_id" FOREIGN KEY("contact_id")
 REFERENCES "contacts" ("contact_id");
 
-ALTER TABLE "crowdfunding" ADD CONSTRAINT "fk_crowdfunding_category_id" FOREIGN KEY("category_id")
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_category_id" FOREIGN KEY("category_id")
 REFERENCES "category" ("category_id");
 
-ALTER TABLE "crowdfunding" ADD CONSTRAINT "fk_crowdfunding_subcategory_id" FOREIGN KEY("subcategory_id")
+ALTER TABLE "campaign" ADD CONSTRAINT "fk_campaign_subcategory_id" FOREIGN KEY("subcategory_id")
 REFERENCES "subcategory" ("subcategory_id");
 
