@@ -24,8 +24,8 @@ CREATE TABLE "crowdfunding" (
     "backers_count" int   NOT NULL,
     "country" VARCHAR(2)   NOT NULL,
     "currency" VARCHAR(3)   NOT NULL,
-    "launch_date" datetime   NOT NULL,
-    "end_date" datetime   NOT NULL,
+    "launch_date" date   NOT NULL,
+    "end_date" date   NOT NULL,
     "category_id" VARCHAR(4)   NOT NULL,
     "subcategory_id" VARCHAR(8)   NOT NULL,
     CONSTRAINT "pk_crowdfunding" PRIMARY KEY (
